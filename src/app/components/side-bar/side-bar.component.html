@@ -1,0 +1,20 @@
+<nav class="sideBar">
+  <div class="container-user">
+    <app-avatar 
+    photo="/assets/user.png"
+    name="Stevezinho224"
+    [isNameHighlighted]="false"
+    [photoLocal]="true"
+    />
+  </div>
+  <div class="container-links">
+    <div class="container-pages">
+      <a routerLink="/" routerLinkActive="selected" [routerLinkActiveOptions]="{ exact: true }">{{ 'sidenav.home' | translate }}</a>
+      <a routerLink="/movies" [class.selected]="isMoviesActive()" >{{ 'sidenav.movies' | translate }}</a>
+    </div>
+    <div class="container-outhers">
+      <a href="">{{ 'sidenav.settings' | translate }}</a>
+      <a href="">{{ 'sidenav.logout' | translate }}</a>
+    </div>
+  </div>
+</nav>

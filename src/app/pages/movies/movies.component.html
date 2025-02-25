@@ -1,0 +1,37 @@
+<section>
+  <div class="divHeader">
+    <app-header-information 
+      [movieTitle]="'movies.title' | translate"
+    />
+  </div>
+  <div>
+    <app-search 
+    />
+    <p class="searchedMovies">{{ this.movies.length | number:'2.0-1'}} {{ 'movies.listedMovies' | translate }} </p>
+  </div>
+  <div class="containerMovies">
+    <ng-content *ngIf="movies.length > 0; else emptyMovies">
+      @for (movie of movies; track $index) {
+        <div class="divMovies">
+            <app-movie-card
+              [id]="movie.id"
+              [image]="movie.poster_path"
+              [movieTitle]="movie.title"
+              [releaseDate]="movie.release_date" 
+              [routerLinkImg]="['/movie', movie.id]"
+            />
+        </div>
+      }
+    </ng-content>
+    <ng-template #emptyMovies>
+      <p class="emptyMovies">{{ 'movies.emptyMovies' | translate }}</p>
+    </ng-template>
+  </div>
+  <div class="divBtnLoad">
+      <app-common-button 
+        [label]="'actions.loadMore' | translate"
+        icon="/assets/seta.png"
+        (click)="loadMoreMovies()"
+      />
+  </div>
+</section>

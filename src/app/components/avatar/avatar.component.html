@@ -1,0 +1,42 @@
+<div class="myContainer" *ngIf="photoLocal; else photoAPI">
+  <div class="divImg">
+    <img [src]="photo" alt="Foto" [width]="widthImg" [height]="heightImg" />
+  </div>
+  <div class="divName">
+    <div class="name" [ngClass]="{ 'no-name-highlight': !isNameHighlighted }">
+      {{ name }}
+    </div>
+    <ng-container>
+      <p class="desc">{{ desc }}</p>
+    </ng-container>
+  </div>
+</div>
+<ng-template #photoAPI>
+  <div class="myContainer">
+    <div class="divImg">
+      <img
+        *ngIf="photo; else photoUser"
+        [src]="'https://image.tmdb.org/t/p/original/' + photo"
+        alt="Foto"
+        [width]="widthImg"
+        [height]="heightImg"
+      />
+      <ng-template #photoUser>
+        <img
+          src="assets/userDefault.png"
+          alt="Foto"
+          [width]="widthImg"
+          [height]="heightImg"
+        />
+      </ng-template>
+    </div>
+    <div class="divName">
+      <p class="name" [ngClass]="{ 'no-name-highlight': !isNameHighlighted }">
+        {{ name }}
+      </p>
+      <ng-container>
+        <p class="desc">{{ desc }}</p>
+      </ng-container>
+    </div>
+  </div>
+</ng-template>

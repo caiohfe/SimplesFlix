@@ -1,0 +1,43 @@
+.divContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.divTitle h2 {
+  padding-top: 4px;
+  font-size: 27px;
+  color: #111827;
+}
+
+@media (max-width: 769px) {
+  .divTitle h2 {
+    padding: 10px 0;
+    font-size: 32px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .divTitle h2 {
+    padding: 10px 0px;
+    font-size: 34px;
+    font-weight: 600;
+  }
+}
+
+@media (min-width: 1440px) {
+  .divTitle h2 {
+    margin-left: -20px;
+    padding: 10px 0px;
+    font-size: 34px;
+    font-weight: 600;
+  }
+}
+
+@media (min-width: 1530px) {
+  .divTitle h2 {
+    margin-left: 2px;
+    font-size: 31px;
+  }
+}
+

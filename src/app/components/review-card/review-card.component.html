@@ -1,0 +1,30 @@
+<section class="reviewCard" *ngIf="isNotEmpty; else empty">
+  <div class="headerCard">
+    <app-avatar
+      [photoLocal]="true"
+      [name]="author"
+      [desc]="(reviewDate | date : 'shortDate':'' : codeDate)"
+      [photo]="userPhoto"
+    />
+  </div>
+  <div class="bodyCard">
+    <span>
+      <img src="assets/star.png" alt="Icon Like" width="25" />
+      <p>{{ rating | number: '1.1-1' : 'en-US' }}</p>
+    </span>
+  </div>
+  <div class="footerCard">
+    <p>{{ reviewContent }}</p>
+    <div class="divWatched">
+      {{ 'movies.details.reviewCard.assistedIn' | translate }} {{ watchedDate | date : "mediumDate":'' : codeDate }}
+    </div>
+  </div>
+</section>
+
+<ng-template #empty>
+  <section class="reviewCardEmpty">
+    <div>
+      <p>{{ reviewContent | translate }}<p>
+    </div>
+  </section>
+</ng-template>

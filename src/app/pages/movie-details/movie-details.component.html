@@ -1,0 +1,208 @@
+<main class="myContainer">
+  <div class="divHeader">
+    <app-header-information [movieTitle]="movieDetails.title" />
+  </div>
+  <section class="containerDetails">
+    <app-card-details-movie
+      [imgMovie]="movieDetails.poster_path"
+      [releaseDate]="movieDetails.release_date"
+      [director]="director"
+      [rating]="movieDetails.vote_average"
+      [genres]="movieDetails.genres"
+    />
+    <div class="secCastAndSinopsis">
+      <div class="divCast">
+        <h3 class="title">{{ 'movies.details.casting' | translate }}</h3>
+        <app-avatar
+          *ngFor="let person of fourFirtsCasts"
+          [name]="person.name"
+          [desc]="person.character"
+          [photo]="person.profile_path"
+        />
+        <div class="divButton">
+          <app-common-button
+            [label]="'actions.loadMorePlus' | translate"
+            (click)="loadModalCast(); loadMoreCasts()"
+          />
+        </div>
+      </div>
+      <div>
+        <app-synopsis-card
+          [sinopse]="
+            movieDetails.overview ? movieDetails.overview : 'movies.details.emptySynopsis' | translate
+          "
+        />
+      </div>
+    </div>
+  </section>
+  <section class="secRevAndForm">
+    <div class="divReviews">
+      @if (reviews.length > 0) { 
+        <swiper-container class="mySwiper" effect="cards" grab-cursor="true">
+        @for (item of reviews; track $index) {
+          <swiper-slide>
+            <app-review-card
+              [userPhoto]="item.userPhoto"
+              [author]="item.author"
+              [reviewContent]="item.reviewContent"
+              [rating]="item.rating"
+              [reviewDate]="item.reviewDate"
+              [watchedDate]="item.watchedDate"
+            />
+          </swiper-slide>
+        } 
+      </swiper-container>
+      } @else {
+        <ng-content>
+          <app-review-card
+            [isNotEmpty]="false"
+            [reviewContent]="'movies.details.reviewCard.emptyReview' | translate "
+          />
+        </ng-content>
+      }
+    </div>
+    <div class="divForm">
+      <div>
+        <h4>{{ 'movies.details.reviewCard.addReview' | translate }}</h4>
+      </div>
+      <form [formGroup]="formReviews" class="form" (ngSubmit)="onSubmit()">
+        <div class="divContainerInputs">
+          <div class="divInpName">
+            <label for="name">{{ 'movies.details.reviewCard.name' | translate }}</label>
+            <input
+              type="text"
+              formControlName="author"
+              name="name"
+              id="name"
+              placeholder="Ex: Jhon"
+            />
+            <p *ngIf="formReviews.get('author')?.invalid && formReviews.get('author')?.touched" 
+            style="color: red; font-size: 11px;">
+              <ng-container *ngIf="formReviews.get('author')?.hasError('required')">
+                {{ 'movies.details.reviewCard.errorsForm.nameRequired' | translate }}
+              </ng-container>
+              <ng-container *ngIf="formReviews.get('author')?.hasError('minlength')">
+                {{ 'movies.details.reviewCard.errorsForm.nameCharacters' | translate }}
+              </ng-container>
+            </p>
+          </div>
+          <div class="divInpRating">
+            <label for="rating">{{ 'movies.details.reviewCard.rate' | translate }}</label>
+            <input
+              type="number"
+              formControlName="rating"
+              name="rating"
+              id="rating"
+              placeholder="Ex: 7.6"
+            />
+            <p *ngIf="formReviews.get('rating')?.invalid && formReviews.get('rating')?.touched" 
+            style="color: red; font-size: 11px;">
+              <ng-container *ngIf="formReviews.get('rating')?.hasError('required')">
+                {{ 'movies.details.reviewCard.errorsForm.rateRequired' | translate }}
+              </ng-container>
+              <ng-container *ngIf="formReviews.get('rating')?.hasError('max')">
+                {{ 'movies.details.reviewCard.errorsForm.rateGreaterTen' | translate }}
+              </ng-container>
+              <ng-container *ngIf="formReviews.get('rating')?.hasError('min')">
+                {{ 'movies.details.reviewCard.errorsForm.rateSmallerZero' | translate }}
+              </ng-container>
+            </p>            
+          </div>
+  
+          <div class="divInpDate">
+            <label for="watchedDate">{{ 'movies.details.reviewCard.watchedIn' | translate }}</label>
+            <input
+              type="date"
+              formControlName="watchedDate"
+              name="watchedDate"
+              id="watchedDate"
+            />
+            <p *ngIf="formReviews.get('watchedDate')?.invalid || formReviews.get('watchedDate')?.touched"
+            style="color: red; font-size: 11px;">
+              <ng-container *ngIf="formReviews.get('watchedDate')?.hasError('required')">
+                {{ 'movies.details.reviewCard.errorsForm.watchedInRequired' | translate }}
+              </ng-container>
+              <ng-container *ngIf="!this.dateNotInFuture()">
+                {{ 'movies.details.reviewCard.errorsForm.watchedAfterCurrrentDate' | translate }}
+              </ng-container>
+              <ng-container *ngIf="!this.dateNotBeforeReleaseDate()">
+                {{ 'movies.details.reviewCard.errorsForm.wacthedBeforeReleaseDate' | translate }}
+              </ng-container>
+            </p>
+          </div>
+        </div>
+
+        <div>
+          <label for="review">{{ 'movies.details.reviewCard.reviewComment' | translate }}</label>
+          <textarea
+            type="text"
+            formControlName="reviewContent"
+            name="review"
+            id="review"
+            [placeholder]="'movies.details.reviewCard.reviewPlaceholder' | translate"
+          ></textarea>
+          <p *ngIf="formReviews.get('reviewContent')?.invalid && formReviews.get('reviewContent')?.touched"
+          style="color: red; font-size: 11px;">
+          {{ 'movies.details.reviewCard.errorsForm.reviewRequired' | translate }}
+          </p>
+        </div>
+        
+        <div class="divBtnForm">
+          <app-common-button 
+          [label]="'actions.publish' | translate" 
+          type="submit"
+          [isDisable]="formInvalido"
+          [action]="loadModalAddReview"
+        />
+        </div>
+      </form>
+    </div>
+  </section>
+</main>
+<!-- Modal Add Review -->
+<ng-container *ngIf="exibirModalAddReview">
+  <app-modal-container (visivelChange)="loadModalAddReview()" [isAlert]="true">
+    <div app-modal-title class="modal-title">
+      <h2>{{ 'modal.modalAddReview.title' | translate }}</h2>
+    </div>
+    <div app-modal-body class="modal-body">
+      <p>{{ 'modal.modalAddReview.message' | translate }}</p>
+    </div>
+    <div app-modal-footer class="modal-footer">
+      <app-common-button [label]="'actions.close' | translate" (click)="loadModalAddReview()" />
+    </div>
+  </app-modal-container>
+</ng-container>
+<!-- Modal erro review -->
+<ng-container *ngIf="exibirModalErroReview">
+  <app-modal-container (visivelChange)="loadModalErroReview()" [isAlert]="true">
+    <div app-modal-title class="modal-title">
+      <h2>{{ 'modal.modalErroReview.title' | translate }}</h2>
+    </div>
+    <div app-modal-body class="modal-body">
+      <p>{{ 'modal.modalErroReview.message' | translate }}</p>
+    </div>
+    <div app-modal-footer class="modal-footer">
+      <app-common-button [label]="'actions.close' | translate" (click)="loadModalErroReview()" />
+    </div>
+  </app-modal-container>
+</ng-container>
+<!-- Modal Casts -->
+<ng-container *ngIf="exibirModalCast">
+  <app-modal-container (visivelChange)="loadModalCast()">
+    <div app-modal-title class="modal-title">
+      <h2>{{ 'modal.modalCast.title' | translate }}</h2>
+    </div>
+    <div app-modal-body class="modal-body">
+      <app-avatar
+        *ngFor="let person of outherCasts"
+        [name]="person.name"
+        [desc]="person.character"
+        [photo]="person.profile_path"
+      />
+    </div>
+    <div app-modal-footer class="modal-footer">
+      <app-common-button [label]="'actions.close' | translate" (click)="loadModalCast()" />
+    </div>
+  </app-modal-container>
+</ng-container>

@@ -1,0 +1,338 @@
+{
+  "reviews": [
+    {
+      "id": "1",
+      "movieId": 939243,
+      "author": "João Silva",
+      "rating": 9,
+      "reviewContent": "Um filme incrível com reviravoltas inesperadas!",
+      "reviewDate": "2025-02-10T14:30:00Z",
+      "watchedDate": "2025-02-05T20:00:00Z",
+      "userPhoto": "/assets/user.png"
+    },
+    {
+      "id": "2",
+      "movieId": 939243,
+      "author": "Jonas Judson",
+      "rating": 6.3,
+      "reviewContent": "Gostei do filme, mas não atingiu minhas expectativas!",
+      "reviewDate": "2025-02-10T14:30:00Z",
+      "watchedDate": "2025-02-05T20:00:00Z",
+      "userPhoto": "/assets/actors/ryan-reynolds.png"
+    },
+    {
+      "id": "3",
+      "movieId": 1241982,
+      "author": "Louquinho da pipoca",
+      "rating": 8,
+      "reviewContent": "Gostei do filme!",
+      "reviewDate": "2025-02-10T14:30:00Z",
+      "watchedDate": "2025-02-05T20:00:00Z",
+      "userPhoto": "/assets/actors/rodrigo-faro.png"
+    },
+    {
+      "id": "b206",
+      "author": "Caio",
+      "reviewContent": "vale muito assistir!",
+      "rating": 8.4,
+      "watchedDate": "2025-01-31",
+      "movieId": 939243,
+      "reviewDate": "2025-02-11",
+      "userPhoto": "/assets/userDefault.png"
+    },
+    {
+      "id": "b2c6",
+      "author": "Sandoval",
+      "reviewContent": "Fazia tempo que eu não assistia algo que mexia comigo dessa forma, uma volta ao tempo!",
+      "rating": 9,
+      "watchedDate": "2025-02-09",
+      "movieId": 939243,
+      "reviewDate": "2025-02-11",
+      "userPhoto": "/assets/userDefault.png"
+    },
+    {
+      "id": "803d",
+      "author": "Caio Feiria",
+      "reviewContent": "Muito bom!",
+      "rating": 8.5,
+      "watchedDate": "2025-02-08",
+      "movieId": 1241982,
+      "reviewDate": "2025-02-11",
+      "userPhoto": "/assets/userDefault.png"
+    },
+    {
+      "id": "cf95",
+      "author": "Sandoval",
+      "reviewContent": "Bom",
+      "rating": 6.3,
+      "watchedDate": "2025-01-26",
+      "movieId": 1241982,
+      "reviewDate": "2025-02-11",
+      "userPhoto": "/assets/userDefault.png"
+    },
+    {
+      "id": "f7ac",
+      "author": "Jackie",
+      "reviewContent": "O panda é meio maluco kkk",
+      "rating": 7.2,
+      "watchedDate": "2025-01-09",
+      "movieId": 1160956,
+      "reviewDate": "2025-02-12",
+      "userPhoto": "/assets/userDefault.png"
+    },
+    {
+      "id": "5663",
+      "author": "Chan",
+      "reviewContent": "Assistiria de novo, muito engraçado",
+      "rating": 8.6,
+      "watchedDate": "2025-01-16",
+      "movieId": 1160956,
+      "reviewDate": "2025-02-12",
+      "userPhoto": "/assets/userDefault.png"
+    },
+    {
+      "id": "7b91",
+      "author": "Jubileu",
+      "reviewContent": "Bom",
+      "rating": 6.8,
+      "watchedDate": "2025-02-07",
+      "movieId": 539972,
+      "reviewDate": "2025-02-12",
+      "userPhoto": "/assets/userDefault.png"
+    },
+    {
+      "id": "0c8c",
+      "author": "Hakuna",
+      "reviewContent": "Assistiria de novo!",
+      "rating": 7.5,
+      "watchedDate": "2025-02-03",
+      "movieId": 539972,
+      "reviewDate": "2025-02-12",
+      "userPhoto": "/assets/userDefault.png"
+    },
+    {
+      "id": "9c3e",
+      "author": "Matata",
+      "reviewContent": "Isso é viver, é aprender.",
+      "rating": 9,
+      "watchedDate": "2025-01-20",
+      "movieId": 539972,
+      "reviewDate": "2025-02-12",
+      "userPhoto": "/assets/userDefault.png"
+    },
+    {
+      "id": "5733",
+      "author": "Wandergreison",
+      "reviewContent": "Esse bicho corre muito, num compensa",
+      "rating": 8.2,
+      "watchedDate": "2025-02-11",
+      "movieId": 939243,
+      "reviewDate": "2025-02-12",
+      "userPhoto": "/assets/userDefault.png"
+    },
+    {
+      "id": "0d35",
+      "author": "Lucas",
+      "reviewContent": "Muito bom",
+      "rating": 9.3,
+      "watchedDate": "2025-02-10",
+      "movieId": 939243,
+      "reviewDate": "2025-02-12",
+      "userPhoto": "/assets/userDefault.png"
+    },
+    {
+      "id": "1685",
+      "author": "Batatinha",
+      "reviewContent": "Ruim",
+      "rating": 3,
+      "watchedDate": "2025-01-09",
+      "movieId": 939243,
+      "reviewDate": "2025-02-12",
+      "userPhoto": "/assets/userDefault.png"
+    },
+    {
+      "id": "17dc",
+      "author": "Pedro",
+      "reviewContent": "Gostei, com bastante ação",
+      "rating": 8,
+      "watchedDate": "2025-01-21",
+      "movieId": 993710,
+      "reviewDate": "2025-02-12",
+      "userPhoto": "/assets/userDefault.png"
+    },
+    {
+      "id": "e996",
+      "author": "Maria",
+      "reviewContent": "Achei bem divertido, filme de ação e comédia",
+      "rating": 8.7,
+      "watchedDate": "2025-01-10",
+      "movieId": 993710,
+      "reviewDate": "2025-02-12",
+      "userPhoto": "/assets/userDefault.png"
+    },
+    {
+      "id": "9458",
+      "author": "Yuri",
+      "reviewContent": "Superou as minhas expectativas",
+      "rating": 8.4,
+      "watchedDate": "2025-02-10",
+      "movieId": 993710,
+      "reviewDate": "2025-02-12",
+      "userPhoto": "/assets/userDefault.png"
+    },
+    {
+      "id": "79b0",
+      "author": "Judson",
+      "reviewContent": "Superou as minhas expectativas",
+      "rating": 9,
+      "watchedDate": "2025-02-05",
+      "movieId": 1241982,
+      "reviewDate": "2025-02-12",
+      "userPhoto": "/assets/userDefault.png"
+    },
+    {
+      "id": "2658",
+      "author": "",
+      "reviewContent": "",
+      "rating": "",
+      "watchedDate": "",
+      "movieId": 539972,
+      "reviewDate": "2025-02-12",
+      "userPhoto": "/assets/userDefault.png"
+    },
+    {
+      "id": "fec1",
+      "author": "Timão",
+      "reviewContent": "Ação a todo momento, muito bom!!",
+      "rating": 10,
+      "watchedDate": "2025-02-04",
+      "movieId": 1249289,
+      "reviewDate": "2025-02-12",
+      "userPhoto": "/assets/userDefault.png"
+    },
+    {
+      "id": "c16f",
+      "author": "Eric",
+      "reviewContent": "Generico!",
+      "rating": 5.2,
+      "watchedDate": "2025-01-16",
+      "movieId": 1249289,
+      "reviewDate": "2025-02-12",
+      "userPhoto": "/assets/userDefault.png"
+    },
+    {
+      "id": "46c0",
+      "author": "Lucas",
+      "reviewContent": "Pando é bonito",
+      "rating": 7.8,
+      "watchedDate": "2025-02-13",
+      "movieId": 1160956,
+      "reviewDate": "2025-02-12",
+      "userPhoto": "/assets/userDefault.png"
+    },
+    {
+      "id": "e78a",
+      "author": "Laion",
+      "reviewContent": "Filme maravilhoso com os gráficos de forma mais realista!",
+      "rating": 7.8,
+      "watchedDate": "2025-02-10",
+      "movieId": 762509,
+      "reviewDate": "2025-02-12",
+      "userPhoto": "/assets/userDefault.png"
+    },
+    {
+      "id": "7ed9",
+      "author": "dawdawd",
+      "reviewContent": "dwadaw",
+      "rating": 2,
+      "watchedDate": "2025-02-04",
+      "movieId": 1212142,
+      "reviewDate": "2025-02-13",
+      "userPhoto": "/assets/userDefault.png"
+    },
+    {
+      "id": "64b6",
+      "author": "dawda",
+      "reviewContent": "dwada",
+      "rating": 2,
+      "watchedDate": "2025-02-05",
+      "movieId": 1241982,
+      "reviewDate": "2025-02-14",
+      "userPhoto": "/assets/userDefault.png"
+    },
+    {
+      "id": "7adb",
+      "author": "dawd",
+      "reviewContent": "dwad",
+      "rating": 2,
+      "watchedDate": "2025-02-04",
+      "movieId": 1241982,
+      "reviewDate": "2025-02-14",
+      "userPhoto": "/assets/userDefault.png"
+    },
+    {
+      "id": "f787",
+      "author": "Samuelzin",
+      "reviewContent": "Me diverti muito!",
+      "rating": 9.3,
+      "watchedDate": "2024-07-26",
+      "movieId": 1022789,
+      "reviewDate": "2025-02-17",
+      "userPhoto": "/assets/userDefault.png"
+    },
+    {
+      "id": "3267",
+      "author": "Kaka",
+      "reviewContent": "Bom",
+      "rating": 8,
+      "watchedDate": "2024-11-27",
+      "movieId": 1022789,
+      "reviewDate": "2025-02-17",
+      "userPhoto": "/assets/userDefault.png"
+    },
+    {
+      "id": "1b11",
+      "author": "Core",
+      "reviewContent": "Excelente filme!!!",
+      "rating": 9.8,
+      "watchedDate": "2024-12-30",
+      "movieId": 1022789,
+      "reviewDate": "2025-02-17",
+      "userPhoto": "/assets/userDefault.png"
+    }
+  ],
+  "favorites": [
+    {
+      "id": "a910",
+      "movieId": 762509
+    },
+    {
+      "id": "4d52",
+      "movieId": 1081012
+    },
+    {
+      "id": "c16b",
+      "movieId": 1241982
+    },
+    {
+      "id": "fd29",
+      "movieId": 939243
+    },
+    {
+      "id": "68c5",
+      "movieId": 1410082
+    },
+    {
+      "id": "1c08",
+      "movieId": 1247019
+    },
+    {
+      "id": "6b51",
+      "movieId": 1022789
+    },
+    {
+      "id": "51c5",
+      "movieId": 597
+    }
+  ]
+}

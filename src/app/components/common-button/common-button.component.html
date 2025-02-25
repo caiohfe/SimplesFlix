@@ -1,0 +1,7 @@
+<button class="btnCommon" [type]="type" [disabled]="isDisable" [ngClass]="isDisable ? 'btnDisable' : ''"
+[ngClass]="colorWhite ? 'colorWhite' : ''"
+(click)="action()">{{ label }}
+  <ng-content *ngIf="icon != ''">
+    <img [src]="icon" alt="Icone Botão" width="18" height="18">
+  </ng-content>
+</button>

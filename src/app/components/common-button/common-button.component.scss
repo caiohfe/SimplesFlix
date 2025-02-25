@@ -1,0 +1,31 @@
+  .btnCommon {
+    padding: 12px 13px;
+    border: none;
+    border-radius: 6px;
+    background-color: #1d4ed8;
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 500;
+
+    @media (min-width: 1024px) {
+      font-size: 14px;
+    }
+
+    @media (min-width: 1900px) {
+      font-size: 17px;
+    }
+  }
+
+.colorWhite {
+  background-color: #ffffff;
+  color: #1D4ED8;
+} 
+
+.btnDisable {
+  background-color: #7f9dee !important;
+}
+
+.btnDisable:hover {
+  cursor: not-allowed;
+}
+  

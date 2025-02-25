@@ -1,0 +1,47 @@
+<section class="myContainer">
+  <div class="divImg">
+    <span>
+      <div class="divTexts">
+        <h2>{{ 'home.bannerListMovies' | translate }}</h2>
+        <p>
+          {{ 'home.messageFavorites' | translate }}
+        </p>
+      </div>
+      <div class="divBtn">
+        <app-common-button
+          [colorWhite]="true"
+          [label]="'actions.watchMovies' | translate"
+          routerLink="/movies"
+        />
+      </div>
+    </span>
+    <img src="assets/banner.jpg" alt="Banner Home" />
+  </div>
+  <div class="favoriteMovies">
+    <h3>{{ 'home.yourFavorites' | translate }}</h3>
+    <swiper-container class="mySwiper" scrollbar-hide="true" 
+    slides-per-view="4" *ngIf="favorites.length > 0; else emptyFavorite">
+      @for (item of favorites; track $index) {
+      <swiper-slide>
+        <app-movie-card
+          [id]="item.id"
+          [image]="item.poster_path"
+          [movieTitle]="item.title"
+          [releaseDate]="item.release_date"
+          [routerLinkImg]="['/movie', item.id]"
+          [isFavorite]="true"
+          (deleted)="loadFavorites()"
+        />
+      </swiper-slide>
+      }
+    </swiper-container>
+  </div>
+</section>
+<ng-template #emptyFavorite>
+  <p class="emptyFavorite">{{ 'home.emptyFavorite' | translate }}</p>
+</ng-template>
+
+<!-- <h2><strong><span class="yellow">Simples</span><span class="blue">Flix</span></strong> — Descubra filmes, explore histórias e avalie emoções.</h2>
+  <div>
+    <img src="/assets/simplesflix-logo.png" alt="Logo SimplesFlix" width="450" height="450">
+  </div> -->

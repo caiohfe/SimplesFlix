@@ -1,0 +1,40 @@
+<main class="myContainer">
+  <div class="movieCard">
+    <div class="divImg">
+      <img [src]="'https://image.tmdb.org/t/p/original/' + imgMovie" alt="Capa Filme">
+    </div>
+    <div class="divInfo">
+      <div class="dateAndEvaluation">
+        <div class="rating">
+          <app-badge 
+            [label]="rating | number: '1.0-1' : 'en-US'"
+            icon="/assets/star.png"
+            [isLargeBadge]="true"
+            [isTextHighlighted]="true"
+            sizeIcon="17"
+          />
+        </div>
+        <div class="description">
+          <p>
+            {{ 'movies.details.director' | translate }} 
+          @for (person of director; track $index) {
+            <strong>
+              <span *ngIf="$index != 0">,</span>
+              {{ person.name }}
+            </strong>
+          }
+          <strong>.</strong>
+        </p>
+          <p>{{ releaseDate | date:'longDate': '': codeDate}}</p>
+        </div>
+      </div>
+      <div [ngClass]="genres.length >= 3 ? 'filmeGenre-space-between' : 'filmeGenre-center'">
+        <app-badge *ngFor="let genre of genres"
+          [label]="genre.name"
+          [moreThanThree]="genres.length > 3 ? true : false"
+          [isSmallBadge]="genres.length > 3 ? true : false"
+        />
+      </div>
+    </div>
+  </div>
+</main>

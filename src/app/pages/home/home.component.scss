@@ -1,0 +1,91 @@
+.myContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 76vw;
+
+  .divImg {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20px;
+    width: 100%;
+
+    span {
+      position: absolute;
+      top: 20px;
+      left: 0;
+      width: 100%;
+      height: 95.8%;
+      background: linear-gradient(to right, #6d96ff 20%, #1d4ed800);
+      z-index: 2000;
+      border-radius: 8px;
+
+      .divTexts {
+        padding-top: 5rem;
+        padding-left: 4rem;
+        color: #ffffff;
+
+        h2 {
+          font-weight: 800;
+          font-size: 36px;
+        }
+
+        p {
+          font-size: 16px;
+          width: 475px;
+        }
+      }
+
+      .divBtn {
+        position: absolute;
+        bottom: 4rem;
+        left: 4rem;
+      }
+    }
+
+    img {
+      border-radius: 8px;
+      width: 100%;
+    }
+  }
+
+  .favoriteMovies {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding: 35px;
+    padding-bottom: 0px;
+    border-radius: 7px;
+    background-color: #fff;
+
+    h3 {
+      padding-bottom: 25px;
+    }
+
+    .mySwiper {
+      width: 100%;
+      height: 100%;
+    }
+
+    swiper-slide {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      height: 32rem;
+    }
+
+    @media (min-width: 1900px) {
+      swiper-slide {
+        height: 35rem;
+      }
+    }
+  }
+}
+
+.emptyFavorite {
+  font-size: 18px;
+  padding: 40px 0px;
+}

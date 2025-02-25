@@ -1,0 +1,70 @@
+{
+  "actions": {
+    "confirm": "Подтвердить",
+    "loadMore": "Загрузить ещё",
+    "loadMorePlus": "Загрузить ещё +",
+    "publish": "Опубликовать",
+    "close": "Закрыть",
+    "watchMovies": "Смотреть фильмы"
+  },
+  "sidenav": {
+    "home": "Главная",
+    "movies": "Фильмы",
+    "settings": "Настройки",
+    "logout": "Выйти"
+  },
+  "search": {
+    "searchMovie": "Поиск фильма..."
+  },
+  "home": {
+    "bannerListMovies": "Создайте свой список фильмов",
+    "messageFavorites": "Сохраните свои любимые фильмы и следите за всеми деталями.",
+    "yourFavorites": "Ваши избранные",
+    "emptyFavorite": "Фильмы в избранное ещё не добавлены!"
+  },
+  "movies": {
+    "title": "Фильмы",
+    "listedMovies": "список фильмов",
+    "emptyMovies": "Фильмы не найдены.",
+    "details": {
+      "director": "Режиссёр",
+      "casting": "Актёры",
+      "synopsis": "Синопсис",
+      "emptySynopsis": "Нет синопсиса.",
+      "reviewCard": {
+        "emptyReview": "Для этого фильма ещё нет отзывов!",
+        "addReview": "Добавить отзыв",
+        "rate": "Оценить",
+        "watchedIn": "Просмотрено",
+        "name": "Имя",
+        "reviewComment": "Комментарий",
+        "reviewPlaceholder": "Например: Очень хороший...",
+        "assistedIn": "Просмотрено",
+        "errorsForm": {
+          "nameRequired": "Имя обязательно.",
+          "nameCharacters": "Имя должно содержать не менее 3 символов.",
+          "rateRequired": "Оценка обязательна.",
+          "rateGreaterTen": "Оценка не может быть больше 10.",
+          "rateSmallerZero": "Оценка не может быть меньше 0.",
+          "watchedInRequired": "Дата обязательна.",
+          "watchedAfterCurrrentDate": "Дата не может быть позднее сегодняшнего дня.",
+          "wacthedBeforeReleaseDate": "Дата не может быть раньше даты выхода фильма.",
+          "reviewRequired": "Отзыв обязателен."
+        }
+      }
+    }
+  },
+  "modal": {
+    "modalAddReview": {
+      "title": "Добавить отзыв",
+      "message": "Ваш отзыв успешно опубликован!"
+    },
+    "modalErroReview": {
+      "title": "Предупреждение",
+      "message": "Не удалось опубликовать ваш отзыв. Попробуйте позже."
+    },
+    "modalCast": {
+      "title": "Актёры"
+    }
+  }
+}

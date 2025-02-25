@@ -1,0 +1,46 @@
+.card {
+  border: none;
+  height: 400px;
+  width: 250px;
+
+  @media (min-width: 1900px) {
+    height: 420px;
+    width: 290px;
+  }
+
+  .divImg > img {
+    object-fit: cover;
+    border-radius: 7px;
+  }
+
+  .divImg:hover {
+    cursor: pointer;
+  }
+
+  .card-body {
+    padding: 10px 0 0 2px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .divHeart {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .sizeSvg {
+    width: 24px;
+    height: 24px;
+  }
+  
+  .fill-black {
+    fill: #212529;
+  }
+  
+  .fill-none {
+    fill: none;
+  }
+}

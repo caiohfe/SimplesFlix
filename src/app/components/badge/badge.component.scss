@@ -1,0 +1,161 @@
+.smallBadge {
+  width: 90px !important;
+  height: 50px !important;
+}
+
+.smallText {
+  font-size: 13px !important;
+}
+
+.communBadge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #1d4ed8;
+  color: white;
+  width: 95px;
+  height: 40px;
+  border-radius: 6px;
+  gap: 10px;
+}
+
+.largeBadge {
+  width: 120px;
+  height: 50px;
+}
+
+.normalText {
+  text-align: center;
+  margin-top: 2px;
+  font-size: 13px;
+}
+
+.textHighlighted {
+  font-size: 18px !important;
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .communBadge {
+    width: 90px;
+    height: 45px;
+
+    img {
+      width: 21px;
+      height: 21px;
+    }
+  }
+
+  .largeBadge {
+    width: 110px;
+    height: 55px;
+  }
+
+  .normalText {
+    font-size: 13.5px;
+  }
+  
+  .textHighlighted {
+    font-size: 20px !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  .communBadge {
+    width: 100px;
+    height: 50px;
+
+    img {
+      width: 23px;
+      height: 23px;
+    }
+  }
+
+  .largeBadge {
+    width: 125px;
+    height: 60px;
+  }
+
+  .normalText {
+    font-size: 15px;
+  }
+  
+  .textHighlighted {
+    font-size: 23px !important;
+  }
+}
+
+@media (min-width: 1440px) {
+  .communBadge {
+    width: 125px;
+    height: 55px;
+
+    img {
+      width: 27px;
+      height: 27px;
+    }
+  }
+
+  .largeBadge {
+    width: 140px;
+    height: 70px;
+  }
+
+  .normalText {
+    font-size: 17px;
+  }
+  
+  .textHighlighted {
+    font-size: 26px !important;
+  }
+}
+
+@media (min-width: 1530px) {
+  .communBadge {
+    width: 100px;
+    height: 48px;
+
+    img {
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  .largeBadge {
+    width: 120px;
+    height: 60px;
+  }
+
+  .normalText {
+    font-size: 16px;
+  }
+  
+  .textHighlighted {
+    font-size: 24px !important;
+  }
+}
+
+@media (min-width: 1900px) {
+  .communBadge {
+    width: 130px;
+    height: 58px;
+
+    img {
+      width: 27px;
+      height: 27px;
+    }
+  }
+
+  .largeBadge {
+    width: 140px;
+    height: 70px;
+  }
+
+  .normalText {
+    font-size: 17px;
+  }
+  
+  .textHighlighted {
+    font-size: 26px !important;
+  }
+}

@@ -1,0 +1,38 @@
+<div class="dropdown">
+  <button
+    class="btn btn-outline-dark dropdown-toggle"
+    style="font-size: 14px"
+    type="button"
+    data-bs-toggle="dropdown"
+    aria-expanded="false"
+  >
+    {{ languageActive }} <span [class]="flag"></span>
+  </button>
+  <ul class="dropdown-menu bg-secondary-subtle">
+    <h3></h3>
+    <li (click)="returnLanguage(languageEnum.Portuguese)">
+      <span class="dropdown-item" href="#"
+        ><span class="fi fi-br"></span>
+        {{ languageDetailsEnum[languageEnum.Portuguese].description }}</span
+      >
+    </li>
+    <li (click)="returnLanguage(languageEnum.English)">
+      <span class="dropdown-item" href="#"
+        ><span class="fi fi-us"></span>
+        {{ languageDetailsEnum[languageEnum.English].description }}</span
+      >
+    </li>
+    <li (click)="returnLanguage(languageEnum.Russian)">
+      <span class="dropdown-item" href="#"
+        ><span class="fi fi-ru"></span>
+        {{ languageDetailsEnum[languageEnum.Russian].description }}</span
+      >
+    </li>
+    <li (click)="returnLanguage(languageEnum.Japan)">
+      <span class="dropdown-item" href="#"
+        ><span class="fi fi-jp"></span>
+        {{ languageDetailsEnum[languageEnum.Japan].description }}</span
+      >
+    </li>
+  </ul>
+</div>

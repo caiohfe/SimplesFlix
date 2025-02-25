@@ -1,0 +1,11 @@
+<section class="communBadge" [ngClass]="{ 'largeBadge': isLargeBadge ? true : false, 'smallBadge': isSmallBadge ? true : false }">
+  <ng-content *ngIf="icon != ''" select="iconleft">
+    <img [src]="icon" alt="Icone badge" [width]="widthIcon" [height]="heightIcon">
+  </ng-content>
+  <div class="normalText" [ngClass]="{ 'textHighlighted': isTextHighlighted ? true : false, 'smallText': moreThanThree ? true : false }">
+    {{ label }}
+  </div>
+  <!-- <ng-content *ngIf="icon != ''" select="iconright">
+    <img [src]="icon" alt="Icone badge" [width]="widthIcon" [height]="heightIcon">
+  </ng-content> -->
+</section>

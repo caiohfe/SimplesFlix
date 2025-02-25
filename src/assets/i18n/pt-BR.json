@@ -1,0 +1,70 @@
+{
+  "actions": {
+    "confirm": "Confirmar",
+    "loadMore": "Carregar mais",
+    "loadMorePlus": "Carregar mais +",
+    "publish": "Publicar",
+    "close": "Fechar",
+    "watchMovies": "Ver filmes"
+  },
+  "sidenav": {
+    "home": "Início",
+    "movies": "Filmes",
+    "settings": "Configurações",
+    "logout": "Sair"
+  },
+  "search": {
+    "searchMovie": "Buscar um filme..."
+  },
+  "home": {
+    "bannerListMovies": "Crie sua lista de filmes",
+    "messageFavorites": "Salve seus filmes favoritos e fique por dentro de todos os detalhes.",
+    "yourFavorites": "Seus favoritos",
+    "emptyFavorite": "Nenhum filme foi adicionado aos favoritos ainda!"
+  },
+  "movies": {
+    "title": "Filmes",
+    "listedMovies": "filmes listados",
+    "emptyMovies": "Nenhum filme encontrado.",
+    "details": {
+      "director": "Dirigido por",
+      "casting": "Elenco",
+      "synopsis": "Sinopse",
+      "emptySynopsis": "Sem sinopse.",
+      "reviewCard": {
+        "emptyReview": "Nenhuma avaliação publicada para este filme!",
+        "addReview": "Adicionar uma avaliação",
+        "rate": "Avaliar",
+        "watchedIn": "Assistido em",
+        "name": "Nome",
+        "reviewComment": "Comentário",
+        "reviewPlaceholder": "Ex: Muito bom...",
+        "assistedIn": "Assistido em",
+        "errorsForm": {
+          "nameRequired": "O nome é obrigatório.",
+          "nameCharacters": "O nome precisa ter pelo menos 3 caracteres.",
+          "rateRequired": "A avaliação é obrigatória.",
+          "rateGreaterTen": "A nota não pode ser maior que 10.",
+          "rateSmallerZero": "A nota não pode ser menor que 0.",
+          "watchedInRequired": "A data é obrigatória.",
+          "watchedAfterCurrrentDate": "A data não pode ser maior que a data de hoje.",
+          "wacthedBeforeReleaseDate": "A data não pode ser anterior ao lançamento do filme.",
+          "reviewRequired": "A avaliação é obrigatória."
+        }
+      }
+    }
+  },
+  "modal": {
+    "modalAddReview": {
+      "title": "Adicionar Avaliação",
+      "message": "Sua avaliação foi publicada com sucesso!"
+    },
+    "modalErroReview": {
+      "title": "Alerta",
+      "message": "Não foi possível publicar sua avaliação, tente novamente mais tarde."
+    },
+    "modalCast": {
+      "title": "Elenco"
+    }
+  }
+}

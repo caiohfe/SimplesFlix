@@ -1,0 +1,109 @@
+.myContainer {
+  display: flex;
+  align-items: center;
+
+  .divImg {
+    padding-right: 18px;
+
+    img {
+      border-radius: 150px;
+    }
+  }
+
+  .divName {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #111827;
+  }
+
+  .desc {
+    font-size: 0.8rem;
+    margin: 0;
+  }
+}
+
+.no-name-highlight {
+  font-weight: normal !important;
+}
+
+.name {
+  font-weight: bold;
+  font-size: 1rem;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .myContainer .desc {
+    font-size: 0.9rem;
+  }
+
+  .myContainer .name {
+    font-size: 1.1rem;
+  }
+
+  .myContainer .divImg img {
+    width: 48px;
+    height: 48px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .myContainer .desc {
+    font-size: 1.1rem;
+  }
+
+  .myContainer .name {
+    font-size: 1.4rem;
+  }
+
+  .myContainer .divImg img {
+    width: 64px;
+    height: 64px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .myContainer .desc {
+    font-size: 1rem;
+  }
+
+  .myContainer .name {
+    font-size: 1.2rem;
+  }
+
+  .myContainer .divImg img {
+    width: 54px;
+    height: 54px;
+  }
+}
+
+@media (min-width: 1530px) {
+  .myContainer .desc {
+    font-size: 1rem;
+  }
+
+  .myContainer .name {
+    font-size: 1.1rem;
+  }
+
+  .myContainer .divImg img {
+    width: 53px;
+    height: 53px;
+  }
+}
+
+@media (min-width: 1900px) {
+  .myContainer .desc {
+    font-size: 1.2rem;
+  }
+
+  .myContainer .name {
+    font-size: 1.4rem;
+  }
+
+  .myContainer .divImg img {
+    width: 74px;
+    height: 74px;
+  }
+}

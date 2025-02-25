@@ -1,0 +1,353 @@
+.modal-title {
+  padding: 10px;
+  border-bottom: 1px solid #ddd; /* Linha separadora abaixo do título */
+}
+
+.modal-body {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.modal-footer {
+  padding: 10px;
+  border-top: 1px solid #ddd;
+  text-align: right;
+}
+
+.containerDetails {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 4rem;
+
+  .title {
+    padding-top: 25px;
+    font-size: 24px;
+    font-weight: 600;
+    margin: 0;
+  }
+
+  .secCastAndSinopsis {
+    display: flex;
+    flex-direction: column;
+    gap: 23px;
+    align-items: center;
+
+    .divCast {
+      display: flex;
+      flex-direction: column;
+      margin-top: 5px;
+      padding-left: 40px;
+      background-color: #ffffff;
+      width: 551px;
+      height: 390px;
+      border-radius: 12px;
+      gap: 22px;
+      position: relative;
+
+      .divButton {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        margin: 0;
+        position: absolute;
+        bottom: 10px;
+        right: 12px;
+      }
+    }
+  }
+}
+
+.secRevAndForm {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding-top: 25px;
+  gap: 6rem;
+}
+
+.divForm {
+  background-color: #ffffff;
+  width: 41.5rem;
+  height: auto;
+  padding: 30px;
+  margin-top: 19px;
+  margin-bottom: 0px;
+  border-radius: 12px;
+  box-sizing: border-box;
+
+  h4 {
+    padding-top: 10px;
+    font-size: 24px;
+    font-weight: 600;
+    margin: 0;
+  }
+
+  .form {
+    padding: 20px;
+    padding-bottom: 0px;
+    border-radius: 12px;
+    width: 100%;
+    gap: 20px;
+    box-sizing: border-box;
+
+    .divContainerInputs {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px; 
+    }
+
+    .divInpName,
+    .divInpRating,
+    .divInpDate {
+      width: auto;
+    }
+
+    .divInpName {
+      flex: 1 1 10rem;
+    }
+
+    .divInpRating {
+      flex: 1 1 4.5rem;
+    }
+
+    .divInpDate {
+      flex: 1 1 8rem;
+    }
+
+    .divBtnForm {
+      display: flex;
+      justify-content: end;
+    }
+
+    label {
+      font-weight: 500;
+      font-size: 15px;
+      margin-bottom: 5px;
+      display: inline-block;
+    }
+
+    input {
+      border: none;
+      border-bottom: 1px solid #696969;
+      font-size: 15px;
+      padding: 5px 0;
+      padding-left: 10px;
+      color: #555555;
+      margin-bottom: 10px;
+      width: 100%;
+    }
+
+    textarea {
+      resize: none;
+      border-radius: 6px;
+      padding-left: 10px;
+      height: 5rem;
+      width: 100%;
+    }
+
+    input:focus {
+      border: none;
+      outline: 1px solid #1d4ed8;
+    }
+
+    @media (max-width: 768px) {
+      .divForm {
+        width: 100%;
+      }
+
+      .form {
+        width: 100%;
+        padding: 15px;
+      }
+
+      .divContainerInputs {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .divInpName,
+      .divInpRating,
+      .divInpDate {
+        width: 100%;
+        margin-bottom: 10px;
+      }
+
+      .divBtnForm {
+        flex-direction: column;
+        gap: 15px;
+      }
+    }
+  }
+}
+
+.mySwiper {
+  width: 400px;
+  height: 340px;
+  position: relative;
+  top: 40px;
+  left: 42px;
+
+  swiper-slide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 18px;
+    font-size: 22px;
+    font-weight: 500;
+    height: 280px !important;
+    width: 370px !important;
+  }
+}
+
+// Media Queries
+@media (max-width: 769px) {
+  .containerDetails {
+    flex-direction: column;
+    gap: 20px;
+
+    .secCastAndSinopsis {
+      .divCast {
+        width: 500px;
+      }
+
+      .divButton {
+        bottom: 5px;
+        right: 8px;
+      }
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  .containerDetails {
+    gap: 20px;
+    flex-wrap: nowrap;
+
+    .title {
+      font-size: 30px;
+    }
+
+    .secCastAndSinopsis {
+      .divCast {
+        width: 440px;
+        height: 495px;
+        gap: 30px;
+      }
+    }
+  }
+}
+
+@media (min-width: 1440px) {
+  .containerDetails {
+    gap: 20px;
+    flex-wrap: nowrap;
+
+    .title {
+      font-size: 28px;
+    }
+
+    .secCastAndSinopsis {
+      .divCast {
+        width: 31rem;
+        height: 455px;
+        gap: 30px;
+      }
+    }
+  }
+}
+
+@media (min-width: 1530px) {  
+  .containerDetails {
+    flex-wrap: nowrap;
+
+    .title {
+      font-size: 24px;
+    }
+
+    .secCastAndSinopsis {
+      .divCast {
+        width: 42rem;
+        height: 325px;
+        gap: 10px;
+      }
+    }
+  }
+  .secRevAndForm {
+    gap: 4rem;
+  }
+}
+
+@media (min-width: 1900px) {
+  .divForm {
+    width: 51.7rem;
+
+    .divInpDate {
+      flex: 1 1 4rem !important;
+      margin-right: 40px;
+    }
+
+    textarea {
+      width: 95% !important;
+    }
+
+    .divBtnForm {
+      margin-right: 40px;
+    }
+  }
+  
+  .containerDetails {
+    .title {
+      font-size: 33px;
+    }
+
+    .secCastAndSinopsis {
+      .divCast {
+        width: 52rem;
+        height: 29.7rem;
+        gap: 20px;
+      }
+    }
+  }
+  .secRevAndForm {
+    gap: 9rem;
+
+    .mySwiper {
+      left: 6rem;
+    }
+
+    .divForm form {
+      width: 51rem;
+    }
+  }
+}
+
+//   .divUndraw {
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     background-color: white;
+//     border-radius: 1rem;
+//     padding: 20px;
+//     width: 51.6rem;
+//   }
+
+//   @media (max-width:768px) {
+//     img {
+//       display: none;
+//     }
+//   }
+
+//   @media (min-width:1900px) {
+//     gap: 2.5rem;
+
+//     form {
+//       width: 593px;
+//     }
+
+//     img {
+//       width: 540px;
+//     }
+//   }

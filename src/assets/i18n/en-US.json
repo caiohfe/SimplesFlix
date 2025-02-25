@@ -1,0 +1,70 @@
+{
+  "actions": {
+    "confirm": "Confirm",
+    "loadMore": "Load More",
+    "loadMorePlus": "Load More +",
+    "publish": "Publish",
+    "close": "To Close",
+    "watchMovies": "Watch movies"
+  },
+  "sidenav": {
+    "home": "Home",
+    "movies": "Movies",
+    "settings": "Settings",
+    "logout": "Logout"
+  },
+  "search": {
+    "searchMovie": "Search for a movie..."
+  },
+  "home": {
+    "bannerListMovies": "Create your movie list",
+    "messageFavorites": "Save your favorite movies and stay up to date with all the details.",
+    "yourFavorites": "Your favorites",
+    "emptyFavorite": "No movies have been added to favorites yet!"
+  },
+  "movies": {
+    "title": "Movies",
+    "listedMovies": "listed movies",
+    "emptyMovies": "No movies found.",
+    "details": {
+			"director": "Directed by",
+      "casting": "Cast",
+      "synopsis": "Synopsis",
+      "emptySynopsis": "No synopsis.",
+      "reviewCard": {
+        "emptyReview": "No reviews published for this film!",
+        "addReview": "Add a review",
+        "rate": "Rate",
+        "watchedIn": "Watched on",
+        "name": "Name",
+        "reviewComment": "Review",
+				"reviewPlaceholder": "Ex: Very good...",
+				"assistedIn": "Assisted in",
+				"errorsForm": {
+					"nameRequired": "Name is mandatory.",
+					"nameCharacters": "O nome precisa ter pelo menos 3 caracteres.",
+					"rateRequired": "Rate is mandatory.",
+					"rateGreaterTen": "The rate cannot be greater than 10.",
+					"rateSmallerZero": "The grade cannot be less than 0.",
+					"watchedInRequired": "Date is mandatory.",
+					"watchedAfterCurrrentDate": "Date cannot be later than today's date.",
+					"wacthedBeforeReleaseDate": "Date cannot be prior to the film's release.",
+					"reviewRequired": "Review is mandatory."
+				}
+      }
+    }
+  },
+	"modal": {
+		"modalAddReview": {
+			"title": "Add Review",
+			"message": "Your review has been published successfully!" 
+		},		
+		"modalErroReview": {
+			"title": "Alert",
+			"message": "We were unable to publish your review, please try again later." 
+		},
+		"modalCast": {
+			"title": "Cast"
+		}
+	}
+}

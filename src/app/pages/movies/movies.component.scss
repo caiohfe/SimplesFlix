@@ -1,0 +1,48 @@
+.divHeader {
+  display: flex;
+  flex-direction: column;
+}
+
+.searchedMovies {
+  padding: 10px 0 16px 3px;
+  color: #4B5563;
+  font-size: 16px;
+}
+
+.divMovies {
+  height: 500px;
+  padding: 32px 20px 30px 20px;
+
+  @media (min-width: 1900px) {
+    margin-bottom: 40px;
+  }
+}
+
+.containerMovies {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  padding-bottom: 20px;
+  margin-top: 10px;
+  border-radius: 10px;
+
+  @media (min-width: 1900px) {
+    padding-bottom: 90px;
+    gap: 20px;
+  }
+
+  .emptyMovies {
+    margin: 0; 
+    padding-top: 20px;
+    font-weight: 600;
+    font-size: 18px;
+  }
+}
+
+.divBtnLoad {
+  display: flex;
+  justify-content: center;
+  padding-top: 30px;
+}
