@@ -1,4 +1,10 @@
-import { Component, OnDestroy, OnInit, signal } from '@angular/core';
+import {
+  AfterViewInit,
+  Component,
+  OnDestroy,
+  OnInit,
+  signal,
+} from '@angular/core';
 import { MovieCardComponent } from '../../components/movie-card/movie-card.component';
 import { HeaderInformationComponent } from '../../components/header-information/header-information.component';
 import { SearchComponent } from '../../components/search/search.component';
@@ -10,6 +16,7 @@ import { FormsModule } from '@angular/forms';
 import { ObservableSearchService } from '../../services/search.service';
 import { LanguageSelectorService } from '../../services/language-selector.service';
 import { TranslatePipe } from '@ngx-translate/core';
+import { BreadCrumbService } from '../../services/bread-crumb.service';
 
 @Component({
   selector: 'app-movies',
@@ -25,7 +32,7 @@ import { TranslatePipe } from '@ngx-translate/core';
   templateUrl: './movies.component.html',
   styleUrl: './movies.component.scss',
 })
-export class MoviesComponent {
+export class MoviesComponent implements AfterViewInit {
   encodeURIComponent = encodeURIComponent;
   movieController: number = 8;
   movies: Array<MovieListItem> = [];
@@ -36,7 +43,8 @@ export class MoviesComponent {
   constructor(
     private movieService: MovieService,
     private observerService: ObservableSearchService,
-    private languageService: LanguageSelectorService
+    private languageService: LanguageSelectorService,
+    private breadCrumbService: BreadCrumbService
   ) {}
 
   ngOnInit(): void {
@@ -50,6 +58,19 @@ export class MoviesComponent {
     this.observerService.searched$.subscribe((value) =>
       this.filterMovies(value)
     );
+  }
+
+  ngAfterViewInit(): void {
+    this.breadCrumbService.breadcrumbSubject$.next([
+      {
+        label: 'sidenav.home',
+        url: '/',
+      },
+      {
+        label: 'sidenav.movies',
+        url: '/movies',
+      },
+    ]);
   }
 
   loadMovies(): void {

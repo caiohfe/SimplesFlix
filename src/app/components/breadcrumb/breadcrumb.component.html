@@ -1,9 +1,9 @@
 <nav class="breadcrumb">
   <ol>
     <li *ngFor="let item of breadcrumbs; let last = last">
-      <a *ngIf="!last; else lastItem" [routerLink]="item.url">{{ item.label }}</a>
+      <a *ngIf="!last; else lastItem" [routerLink]="item.url">{{ item.label | translate }}</a>
       <ng-template #lastItem>
-        <span>{{ item.label }}</span>
+        <span>{{ item.label | translate }}</span>
       </ng-template>
     </li>
   </ol>

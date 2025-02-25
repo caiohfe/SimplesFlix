@@ -49,7 +49,7 @@ import { TranslatePipe } from '@ngx-translate/core';
   providers: [DatePipe],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
-export class MovieDetailsComponent implements OnInit {
+export class MovieDetailsComponent implements OnInit, AfterViewInit {
   movieDetails!: LoadMovie;
   casts: Array<Cast> = [];
   outherCasts: Array<Cast> = [];
@@ -86,6 +86,23 @@ export class MovieDetailsComponent implements OnInit {
 
     this.createForm();
     this.formValidation();
+  }
+
+  ngAfterViewInit(): void {
+    this.breadcrumbService.breadcrumbSubject$.next([
+      {
+        label: 'sidenav.home',
+        url: '/',
+      },
+      {
+        label: 'sidenav.movies',
+        url: '/movies',
+      },
+      {
+        label: this.movieDetails.title,
+        url: '/movie/' + this.movieDetails.id,
+      },
+    ]);
   }
 
   createForm(): void {
@@ -136,9 +153,6 @@ export class MovieDetailsComponent implements OnInit {
     this.movieService.getMovieById(this.codeLanguage, idParam).subscribe({
       next: (res) => {
         this.movieDetails = res;
-        const currentBreadcrumbs =
-          this.breadcrumbService.breadcrumbsSubject.value;
-        this.breadcrumbService.updateLastBreadcrumb(res.title);
       },
     });
 

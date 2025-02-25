@@ -1,4 +1,9 @@
-import { Component, CUSTOM_ELEMENTS_SCHEMA, OnInit } from '@angular/core';
+import {
+  AfterViewInit,
+  Component,
+  CUSTOM_ELEMENTS_SCHEMA,
+  OnInit,
+} from '@angular/core';
 import { CommonButtonComponent } from '../../components/common-button/common-button.component';
 import { TranslatePipe } from '@ngx-translate/core';
 import { MovieCardComponent } from '../../components/movie-card/movie-card.component';
@@ -11,6 +16,7 @@ import { MovieService } from '../../services/movie.service';
 import { CommonModule } from '@angular/common';
 import { Movie } from '../../models/movie.model';
 import { LoadMovie } from '../../@types/loadMovie';
+import { BreadCrumbService } from '../../services/bread-crumb.service';
 
 @Component({
   selector: 'app-home',
@@ -25,18 +31,28 @@ import { LoadMovie } from '../../@types/loadMovie';
   styleUrl: './home.component.scss',
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent implements OnInit, AfterViewInit {
   codeLanguage!: string;
   favorites: LoadMovie[] = [];
 
   constructor(
     private languageService: LanguageSelectorService,
     private favoritesService: FavoritesService,
-    private movieService: MovieService
+    private movieService: MovieService,
+    private breadCrumbService: BreadCrumbService
   ) {}
 
   ngOnInit(): void {
     this.getCodeLang();
+  }
+
+  ngAfterViewInit() {
+    this.breadCrumbService.breadcrumbSubject$.next([
+      {
+        label: 'sidenav.home',
+        url: '/',
+      },
+    ]);
   }
 
   loadFavorites(): void {
