@@ -35,6 +35,15 @@
       (deletedMovie)="loadTopRated()"
     />
   </div>
+  <div>
+    <h3>{{ 'Em breve' }}</h3>
+    <app-carousel 
+      [arrayMovie]="upcomings"
+      [codeLanguage]="codeLanguage"
+      [action]="loadUpComing"
+      (deletedMovie)="loadUpComing()"
+    />
+  </div>
 </section>
 
 <!-- <h2><strong><span class="yellow">Simples</span><span class="blue">Flix</span></strong> — Descubra filmes, explore histórias e avalie emoções.</h2>
