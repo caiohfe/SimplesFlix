@@ -50,42 +50,9 @@
       width: 100%;
     }
   }
+}
 
-  .favoriteMovies {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    padding: 35px;
-    padding-bottom: 0px;
-    border-radius: 7px;
-    background-color: #fff;
-
-    h3 {
-      padding-bottom: 25px;
-    }
-
-    .mySwiper {
-      width: 100%;
-      height: 100%;
-    }
-
-    swiper-slide {
-      display: flex;
-      justify-content: center;
-      width: 100%;
-      height: 32rem;
-    }
-
-    @media (min-width: 1900px) {
-      swiper-slide {
-        height: 35rem;
-      }
-    }
+  .emptyFavorite {
+    font-size: 18px;
+    padding: 40px 0px;
   }
-}
-
-.emptyFavorite {
-  font-size: 18px;
-  padding: 40px 0px;
-}
