@@ -17,29 +17,25 @@
     </span>
     <img src="assets/banner.jpg" alt="Banner Home" />
   </div>
-  <div class="favoriteMovies">
+  <div>
     <h3>{{ 'home.yourFavorites' | translate }}</h3>
-    <swiper-container class="mySwiper" scrollbar-hide="true" 
-    slides-per-view="4" *ngIf="favorites.length > 0; else emptyFavorite">
-      @for (item of favorites; track $index) {
-      <swiper-slide>
-        <app-movie-card
-          [id]="item.id"
-          [image]="item.poster_path"
-          [movieTitle]="item.title"
-          [releaseDate]="item.release_date"
-          [routerLinkImg]="['/movie', item.id]"
-          [isFavorite]="true"
-          (deleted)="loadFavorites()"
-        />
-      </swiper-slide>
-      }
-    </swiper-container>
+    <app-carousel 
+      [arrayMovie]="favorites"
+      [codeLanguage]="codeLanguage"
+      [action]="loadFavorites"
+      (deletedMovie)="loadFavorites()"
+    />
+  </div>
+  <div>
+    <h3>{{ 'Mais Assistidos' }}</h3>
+    <app-carousel 
+      [arrayMovie]="rateds"
+      [codeLanguage]="codeLanguage"
+      [action]="loadTopRated"
+      (deletedMovie)="loadTopRated()"
+    />
   </div>
 </section>
-<ng-template #emptyFavorite>
-  <p class="emptyFavorite">{{ 'home.emptyFavorite' | translate }}</p>
-</ng-template>
 
 <!-- <h2><strong><span class="yellow">Simples</span><span class="blue">Flix</span></strong> — Descubra filmes, explore histórias e avalie emoções.</h2>
   <div>

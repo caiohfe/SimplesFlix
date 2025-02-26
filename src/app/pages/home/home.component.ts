@@ -6,26 +6,26 @@ import {
 } from '@angular/core';
 import { CommonButtonComponent } from '../../components/common-button/common-button.component';
 import { TranslatePipe } from '@ngx-translate/core';
-import { MovieCardComponent } from '../../components/movie-card/movie-card.component';
-import { MovieListItem } from '../../@types/movieListItem';
 import { LanguageSelectorService } from '../../services/language-selector.service';
 import { RouterLink } from '@angular/router';
 import { FavoritesService } from '../../services/favorites.service';
-import { FavoriteMovie } from '../../@types/movieFavorite';
 import { MovieService } from '../../services/movie.service';
 import { CommonModule } from '@angular/common';
-import { Movie } from '../../models/movie.model';
 import { LoadMovie } from '../../@types/loadMovie';
 import { BreadCrumbService } from '../../services/bread-crumb.service';
+import { CarouselComponent } from '../../components/carousel/carousel.component';
+import { TopRatedService } from '../../services/top-rated.service';
+import { TopRated } from '../../@types/topRated';
+import { MovieListItem } from '../../@types/movieListItem';
 
 @Component({
   selector: 'app-home',
   imports: [
     CommonButtonComponent,
     TranslatePipe,
-    MovieCardComponent,
     RouterLink,
     CommonModule,
+    CarouselComponent,
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
@@ -34,16 +34,19 @@ import { BreadCrumbService } from '../../services/bread-crumb.service';
 export class HomeComponent implements OnInit, AfterViewInit {
   codeLanguage!: string;
   favorites: LoadMovie[] = [];
+  rateds: LoadMovie[] = [];
 
   constructor(
     private languageService: LanguageSelectorService,
     private favoritesService: FavoritesService,
     private movieService: MovieService,
-    private breadCrumbService: BreadCrumbService
+    private breadCrumbService: BreadCrumbService,
+    private topRatedService: TopRatedService
   ) {}
 
   ngOnInit(): void {
     this.getCodeLang();
+    this.loadTopRated();
   }
 
   ngAfterViewInit() {
@@ -74,7 +77,14 @@ export class HomeComponent implements OnInit, AfterViewInit {
     });
   }
 
-  movieDeleted(): void {}
+  loadTopRated(): void {
+    this.topRatedService.getTopRated(this.codeLanguage, 1).subscribe({
+      next: (res) => {
+        this.rateds = res.results;
+        console.log('TOP RATED', this.rateds);
+      },
+    });
+  }
 
   getCodeLang(): void {
     this.languageService.getCode().subscribe({

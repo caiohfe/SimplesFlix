@@ -1,0 +1,22 @@
+<div class="mycontainer">
+  <swiper-container class="mySwiper" scrollbar-hide="true" 
+  slides-per-view="4" *ngIf="arrayMovie.length > 0; else emptyFavorite">
+    @for (item of arrayMovie; track $index) {
+      <swiper-slide>
+        <app-movie-card
+          [id]="item.id"
+          [image]="item.poster_path"
+          [movieTitle]="item.title"
+          [releaseDate]="item.release_date"
+          [routerLinkImg]="['/movie', item.id]"
+          [isFavorite]="isFavorite"
+          (deleted)="emitEvent()"
+        />
+      </swiper-slide>
+    }
+  </swiper-container>
+</div>
+
+<ng-template #emptyFavorite>
+  <p class="emptyFavorite">{{ 'home.emptyFavorite' | translate }}</p>
+</ng-template>

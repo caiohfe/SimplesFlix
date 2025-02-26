@@ -13,6 +13,7 @@ import { FavoritesService } from '../../services/favorites.service';
 import { MovieListItem } from '../../@types/movieListItem';
 import { FavoriteMovie } from '../../@types/movieFavorite';
 import { LocationUpgradeModule } from '@angular/common/upgrade';
+import { TopRatedService } from '../../services/top-rated.service';
 
 @Component({
   selector: 'app-movie-card',
@@ -27,6 +28,7 @@ export class MovieCardComponent {
   @Input() image!: string;
   @Input() routerLinkImg!: (string | number)[];
   @Input() isFavorite: boolean = false;
+  @Input() whichMovieList: string = '';
   @Output() deleted = new EventEmitter<boolean>();
   codeDate!: string;
   movie!: FavoriteMovie;
@@ -34,7 +36,8 @@ export class MovieCardComponent {
 
   constructor(
     private languageService: LanguageSelectorService,
-    private favoritesService: FavoritesService
+    private favoritesService: FavoritesService,
+    private topRatedService: TopRatedService
   ) {}
 
   ngOnInit(): void {
@@ -45,7 +48,6 @@ export class MovieCardComponent {
     });
     this.createMovie(this.id);
     this.checkFavorite();
-    console.log('ID ONINIT:', this.id);
   }
   createMovie(movieId: number): void {
     this.movie = {
